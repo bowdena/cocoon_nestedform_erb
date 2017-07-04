@@ -11,7 +11,6 @@
         <th></th>
         <th>Task Name</th>
         <th>Completed</th>
-        <th>Due</th>
       </tr>
     </thead>
     <tbody class='tasks'>
@@ -24,7 +23,7 @@
 
   <div class="form-actions">
     <%= f.button :submit %>
-    <%= link_to_add_row('Add Task', f, :tasks, class: 'btn btn-primary') %>
+    
     <!-- add a task in the node class='tasks' and append it -->
     <!-- link_to_add_association is provided by cocoon -->
     <%= link_to_add_association 'Add Task', f, :tasks, class: 'btn btn-primary',

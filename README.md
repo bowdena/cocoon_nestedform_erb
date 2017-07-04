@@ -27,3 +27,8 @@ Following:
 https://www.driftingruby.com/episodes/nested-forms-from-scratch#show_notes
 
 https://github.com/driftingruby/070-nested-forms-from-scratch/blob/master/app/controllers/todo_lists_controller.rb
+
+Added the code to incorporate the cocoon gem:
+
+https://www.driftingruby.com/episodes/nested-forms-with-cocoon
+https://github.com/driftingruby/071-nested-forms-with-cocoon
