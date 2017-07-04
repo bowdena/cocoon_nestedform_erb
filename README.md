@@ -43,3 +43,7 @@ https://github.com/driftingruby/071-nested-forms-with-cocoon
 
 bundle
 rails db:migrate
+
+
+modal basic description (good):
+https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-modals.php
