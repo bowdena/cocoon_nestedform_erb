@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks
+//= require cocoon
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
