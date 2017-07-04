@@ -16,3 +16,30 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+// wrap in the turbolinks callback
+$(document).on('turbolinks:load', function(){
+  //capture when the user clicks on the remove record
+  $('form').on('click'), '.remove_record', function(event){
+    // find the previous hidden and set to 1
+    $(this).prev('input[type=hidden]').val('1');
+    // hide the previous tr
+    $(this).closest('tr').hide();
+    // don't take us from the page.
+    return event.preventDefault();
+  })
+
+
+  // capture when user clicks on the add fields
+  $('form').on('click', '.add_fields', function(event){
+    var regexp, time;
+    time = new Date().getTime();
+    // capture the regex of the data that we passed in
+    regexp = new RegExp($(this).data('id'), 'g');
+    // on fields class append replace hte regexp id with the new time
+    $('.fields').append($(this).data('fields').replace(regexp, time));
+    // don't take us off the page.
+    return event.preventDefault();
+  });
+
+});

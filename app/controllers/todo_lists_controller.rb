@@ -16,13 +16,15 @@ class TodoListsController < ApplicationController
   def new
     @todo_list = TodoList.new
     # create a new task record
-    @todo_list.tasks.build
+    # moved to javascript
+    #@todo_list.tasks.build
   end
 
   # GET /todo_lists/1/edit
   def edit
     # create a new task record
-    @todo_list.tasks.build
+    # moved to javascript
+    #@todo_list.tasks.build
   end
 
   # POST /todo_lists

@@ -23,5 +23,8 @@
 
 <div class="form-actions">
   <%= f.button :submit %>
+  <!--helper method: name (add task), formbuilder (f), association(tasks)
+  , class(btn btn-primary (optional)).  See application_helper.rb -->
+  <%= link_to_add_row('Add Task', f, :tasks, class: 'btn btn-primary') %>
 </div>
 <% end %>
