@@ -14,9 +14,10 @@
         <th>Due</th>
       </tr>
     </thead>
-    <tbody class='fields'>
+    <tbody class='tasks'>
       <%= f.simple_fields_for :tasks do |builder| %>
-        <%= render 'task', f: builder %>
+        <!-- cocoon looks for _fields -->
+        <%= render 'task_fields', f: builder %>
       <% end %>
     </tbody>
   </table>
@@ -24,5 +25,12 @@
   <div class="form-actions">
     <%= f.button :submit %>
     <%= link_to_add_row('Add Task', f, :tasks, class: 'btn btn-primary') %>
+    <!-- add a task in the node class='tasks' and append it -->
+    <!-- link_to_add_association is provided by cocoon -->
+    <%= link_to_add_association 'Add Task', f, :tasks, class: 'btn btn-primary',
+    data: {
+      association_insertion_node: '.tasks',
+      association_insertion_method: :append
+    } %>
   </div>
 <% end %>
