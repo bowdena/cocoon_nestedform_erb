@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Following:
+https://www.driftingruby.com/episodes/nested-forms-from-scratch#show_notes
