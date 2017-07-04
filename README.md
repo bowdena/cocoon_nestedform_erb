@@ -25,3 +25,5 @@ Things you may want to cover:
 
 Following:
 https://www.driftingruby.com/episodes/nested-forms-from-scratch#show_notes
+
+https://github.com/driftingruby/070-nested-forms-from-scratch/blob/master/app/controllers/todo_lists_controller.rb
