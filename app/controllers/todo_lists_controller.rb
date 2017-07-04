@@ -15,10 +15,14 @@ class TodoListsController < ApplicationController
   # GET /todo_lists/new
   def new
     @todo_list = TodoList.new
+    # create a new task record
+    @todo_list.tasks.build
   end
 
   # GET /todo_lists/1/edit
   def edit
+    # create a new task record
+    @todo_list.tasks.build
   end
 
   # POST /todo_lists
@@ -69,6 +73,11 @@ class TodoListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_list_params
-      params.require(:todo_list).permit(:name)
+      #params.require(:todo_list).permit(:name, tasks_attributes: [:id, :_destroy, :todo_list_id, :name, :completed, :due])
+      # allow all Task attributes and push _destroy to it as well.
+      #2.4.0 :001 > Task.attribute_names.map(&:to_sym).push(:_destroy)
+      # => [:id, :todo_list_id, :name, :completed, :due, :created_at, :updated_at, :_destroy]
+
+      params.require(:todo_list).permit(:name, Task.attribute_names.map(&:to_sym).push(:_destroy))
     end
 end
