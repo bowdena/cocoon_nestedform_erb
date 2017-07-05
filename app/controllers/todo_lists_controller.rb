@@ -78,7 +78,7 @@ class TodoListsController < ApplicationController
       # allow all Task attributes and push _destroy to it as well.
       #2.4.0 :001 > Task.attribute_names.map(&:to_sym).push(:_destroy)
       # => [:id, :todo_list_id, :name, :completed, :due, :created_at, :updated_at, :_destroy]
-
-      params.require(:todo_list).permit(:name, Task.attribute_names.map(&:to_sym).push(:_destroy))
+      params.require(:todo_list).permit(:name, tasks_attributes: [:id, :_destroy, :todo_list_id, :name, :completed, :due])
+      #params.require(:todo_list).permit(:name, Task.attribute_names.map(&:to_sym).push(:_destroy))
     end
 end
